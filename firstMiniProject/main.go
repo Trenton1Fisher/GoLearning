@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main()  {
 
@@ -51,5 +55,76 @@ func main()  {
   fmt.Println(rangeTwo)
   rangeThree := names[:3]
   fmt.Println(rangeThree)
+
+  //Standard Library
+  greeting := "hello there friends!"
+  fmt.Println(strings.Contains(greeting, "hello"))
+  fmt.Println(strings.Index(greeting, "er"))
+  fmt.Println(strings.Split(greeting, "f"))
+
+  sortAges := []int{2,4,5,6}
+  index := sort.SearchInts(sortAges, 5)
+  fmt.Println(index)
+
+  standardnames := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
+  sort.Strings(standardnames)
+  fmt.Println(standardnames)
+
+  fmt.Println(sort.SearchStrings(standardnames, "bowser"))
+
+  //Loops
+  x := 0
+  for x < 5 {
+    fmt.Println("value of x is: ", x)
+    x++
+  }
+
+  for i := 0; i < 5; i++ {
+    fmt.Println("value of i: ", i)
+  }
+
+  for i := 0; i < len(standardnames); i++ {
+    fmt.Println(standardnames[i])
+  }
+
+  //Replace with _ if you don't want one or the other
+  for index, value := range standardnames {
+    fmt.Printf("The position at index: %d is: %s\n", index , value)
+  }
+
+  //Booleans & conditionals
+  myAge := 45
+  fmt.Println(myAge <= 50)
+  fmt.Println(myAge > 50)
+
+  if(myAge > 40){
+    fmt.Println("Age is Greater than 30")
+  } else if myAge < 50 {
+    fmt.Println("Age is less than 40")
+  }
+
+  for index, value := range standardnames{
+    if index == 1 {
+      fmt.Println("Continuing at pos: ", index)
+      continue
+    }
+    if index > 2 {
+      fmt.Println("Breaking at position: ",index)
+        break
+      
+    }
+    fmt.Printf("The value at position %d is %s\n", index, value)
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 }
